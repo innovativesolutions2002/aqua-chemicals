@@ -54,11 +54,13 @@ export default function Home() {
                 }
                 return r.json();
             })
-            .then(data => {
-                 setProducts(
-                  data.sort((a, b) => a.sortOrder - b.sortOrder)
-             );
-             })
+            .then((data) => {
+                console.log("PRODUCTS FROM API:", data);
+
+                setProducts(
+                    data.sort((a, b) => a.sortOrder - b.sortOrder)
+                );
+            })
             .catch(err => {
                 console.error("Failed to fetch products:", err);
              });
