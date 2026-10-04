@@ -55,7 +55,9 @@ export default function Home() {
                 return r.json();
             })
             .then((data) => {
-                console.log("PRODUCTS FROM API:", data);
+                
+                console.log("PRODUCTS RECEIVED:", data);
+                console.log("PRODUCT COUNT:", data.length);
 
                 setProducts(
                     data.sort((a, b) => a.sortOrder - b.sortOrder)
