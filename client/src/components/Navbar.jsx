@@ -8,11 +8,25 @@ export default function Navbar() {
     const [products, setProducts] = useState([]);
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
-    // Fetch products from API (Ensures dynamic dropdown per PDF requirements)
+    // Fetch products from Render API
     useEffect(() => {
-        fetch('/api/products')
-            .then(r => r.json())
-            .then(data => setProducts(data.sort((a, b) => a.sortOrder - b.sortOrder)));
+        const API_URL = import.meta.env.VITE_API_URL;
+
+        fetch(`${API_URL}/api/products`)
+            .then((r) => {
+                if (!r.ok) {
+                    throw new Error(`API Error: ${r.status}`);
+                }
+                return r.json();
+            })
+            .then((data) => {
+                setProducts(
+                    data.sort((a, b) => a.sortOrder - b.sortOrder)
+                );
+            })
+            .catch((err) => {
+                console.error("Failed to fetch navbar products:", err);
+            });
     }, []);
 
     const navLinks = [
