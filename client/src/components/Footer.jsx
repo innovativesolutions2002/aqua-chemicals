@@ -187,7 +187,7 @@ export default function Footer() {
                                     href="mailto:info@aquaandenzymes.com"
                                     className="hover:text-chem-400 transition break-all"
                                 >
-                                    info@aquaandenzymes.com
+                                    info@aquachemicals.org
                                 </a>
                             </div>
                         </div>
