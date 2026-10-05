@@ -45,7 +45,7 @@ export default function About() {
                                 'Advanced Bioculture for ETP/STP',
                                 'Sugar Speciality Chemicals',
                                 'Corrosion Inhibitors',
-                                'Paper <Chemicals></Chemicals>'
+                                'Paper Chemicals'
                             ].map(item => (
                                 <li key={item} className="flex items-start gap-3 text-gray-300">
                                     <CheckCircle2 className="w-5 h-5 text-chem-500 shrink-0 mt-0.5" />
